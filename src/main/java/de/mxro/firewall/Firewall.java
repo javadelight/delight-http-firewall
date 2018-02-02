@@ -4,13 +4,13 @@ import java.util.List;
 
 import de.mxro.firewall.internal.ProtectedService;
 import de.mxro.httpserver.HttpService;
-import de.mxro.httpserver.services.Services;
+import de.mxro.httpserver.services.HttpServices;
 
 public class Firewall {
 
 	public static final HttpService protect(HttpService service, Rule rule) {
 		
-		return Services.safeShutdown(new ProtectedService(service, rule));
+		return HttpServices.safeShutdown(new ProtectedService(service, rule));
 		
 	}
 	
